@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose');//Өгөгдлийн бүтэц
 
 const menuItemSchema = new mongoose.Schema(
   {

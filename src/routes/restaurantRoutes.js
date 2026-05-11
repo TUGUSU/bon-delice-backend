@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express');//URL definition
 const router = express.Router();
 
 const {
@@ -22,7 +22,7 @@ router.post('/', createRestaurant);
 router.put('/:id', updateRestaurant);
 router.delete('/:id', deleteRestaurant);
 
-// Nested reviews under a restaurant
+// restaurant door bairlah review
 router.get('/:restaurantId/reviews', getReviews);
 router.post('/:restaurantId/reviews', createReview);
 router.delete('/:restaurantId/reviews/:reviewId', deleteReview);

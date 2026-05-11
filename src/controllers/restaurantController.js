@@ -1,4 +1,4 @@
-const Restaurant = require('../models/Restaurant');
+const Restaurant = require('../models/Restaurant');// CRUD pegination and filter
 
 /**
  * GET /api/restaurants
@@ -6,8 +6,8 @@ const Restaurant = require('../models/Restaurant');
  */
 exports.getRestaurants = async (req, res) => {
   try {
-    const page = Math.max(1, Number(req.query.page) || 1);
-    const limit = Math.min(50, Math.max(1, Number(req.query.limit) || 6));
+    const page = Math.max(1, Number(req.query.page) || 1); //paganation hed deh huudas
+    const limit = Math.min(50, Math.max(1, Number(req.query.limit) || 6)); // huudas bvrt
     const { category, section, q, minRating, maxRating, isOpen } = req.query;
 
     const filter = {};
@@ -26,7 +26,7 @@ exports.getRestaurants = async (req, res) => {
       filter.$or = [
         { name: { $regex: q, $options: 'i' } },
         { description: { $regex: q, $options: 'i' } },
-        { tags: { $regex: q, $options: 'i' } },
+        { tags: { $regex: s, $options: 'i' } },
       ];
     }
 

@@ -42,7 +42,7 @@ exports.createReview = async (req, res) => {
     const review = new Review({ ...req.body, restaurantId });
     const saved = await review.save();
 
-    // Recalculate average rating
+    // average rating iif dahin tootsooloh
     const allReviews = await Review.find({ restaurantId });
     const avg =
       allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length;

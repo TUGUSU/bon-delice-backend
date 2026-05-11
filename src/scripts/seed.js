@@ -3,7 +3,7 @@ require('dotenv').config({ path: require('path').resolve(__dirname, '../../.env'
 const mongoose = require('mongoose');
 const Restaurant = require('../models/Restaurant');
 
-// Copy restaurants.json from frontend into backend/src/scripts/data/
+// frotend ees restaurants.json iig backend/src/scripts/data/ ruu huulah
 const data = require('./data/restaurants.json');
 
 async function seed() {
